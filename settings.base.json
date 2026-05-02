@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(bash -c:*)",
+      "Bash(ls:*)",
+      "Bash(pwd:*)",
+      "Bash(cd:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(rmdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(chmod:*)",
+      "Bash(touch:*)",
+      "Bash(which:*)",
+      "Bash(echo:*)",
+      "Bash(printf:*)",
+      "Bash(test:*)",
+      "Bash([:*)",
+      "Bash(tail:*)",
+      "Bash(head:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(diff:*)",
+      "Bash(grep:*)",
+      "Bash(env:*)",
+      "Bash(true:*)",
+      "Read(**/*.{json,yaml,yml,md,sh,txt,gitignore,env.example})",
+      "Edit(**/*.{json,yaml,yml,md,sh,txt,gitignore})",
+      "Write(**/*.{json,yaml,yml,md,sh,txt,gitignore})"
+    ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Read(**/__pycache__/**)",
+      "Read(**/node_modules/**)",
+      "Read(**/obj/**)",
+      "Read(**/bin/**)",
+      "Read(**/.venv/**)"
+    ]
+  }
+}

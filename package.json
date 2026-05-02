@@ -1,0 +1,33 @@
+{
+  "name": "adrkit",
+  "version": "1.0.0",
+  "description": "ADR-driven development workflow for Claude Code",
+  "bin": {
+    "adrkit": "./bin/adrkit.js"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "adr",
+    "architecture-decision-record",
+    "workflow",
+    "ai",
+    "developer-tools"
+  ],
+  "author": "tiagoastak",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiagoastak/adr-kit.git"
+  },
+  "homepage": "https://github.com/tiagoastak/adr-kit#readme",
+  "bugs": {
+    "url": "https://github.com/tiagoastak/adr-kit/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
