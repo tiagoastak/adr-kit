@@ -1,6 +1,6 @@
 {
   "name": "@tiagoasta/adrkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ADR-driven development workflow for Claude Code",
   "bin": {
     "adrkit": "bin/adrkit.js"
