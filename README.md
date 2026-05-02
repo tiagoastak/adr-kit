@@ -1,6 +1,6 @@
 # adr-kit
 
-[![npm version](https://img.shields.io/npm/v/adrkit.svg)](https://www.npmjs.com/package/adrkit)
+[![npm version](https://img.shields.io/npm/v/@tiagoasta/adrkit.svg)](https://www.npmjs.com/package/@tiagoasta/adrkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow?logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/tiagoasta)
 
@@ -25,7 +25,7 @@ The goal is not to slow things down. It is to make sure that when Claude impleme
 - **Templates** — ADR, execution plan, backlog item, parallel work brief, ADR index
 - **Stack detection** — auto-generates Python, TypeScript, and .NET convention rules on init
 - **Git worktree support** — isolated parallel feature development out of the box
-- **npx installer** — `npx adrkit init` or `npx adrkit update` in any repo
+- **npx installer** — `npx @tiagoasta/adrkit init` or `npx @tiagoasta/adrkit update` in any repo
 
 ---
 
@@ -35,7 +35,7 @@ The goal is not to slow things down. It is to make sure that when Claude impleme
 
 ```bash
 # Inside your existing git repo
-npx adrkit init
+npx @tiagoasta/adrkit init
 ```
 
 This adds the submodule and prints the one command to run in Claude Code.
@@ -43,7 +43,7 @@ This adds the submodule and prints the one command to run in Claude Code.
 To update later:
 
 ```bash
-npx adrkit update
+npx @tiagoasta/adrkit update
 ```
 
 ### Option B: Manual submodule

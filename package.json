@@ -1,9 +1,9 @@
 {
-  "name": "adrkit",
+  "name": "@tiagoasta/adrkit",
   "version": "1.0.0",
   "description": "ADR-driven development workflow for Claude Code",
   "bin": {
-    "adrkit": "./bin/adrkit.js"
+    "adrkit": "bin/adrkit.js"
   },
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0"
@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tiagoastak/adr-kit.git"
+    "url": "git+https://github.com/tiagoastak/adr-kit.git"
   },
   "homepage": "https://github.com/tiagoastak/adr-kit#readme",
   "bugs": {
