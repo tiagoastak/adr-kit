@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow?logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/tiagoasta)
 
-**ADR-driven development workflow for Claude Code.** Add this as a git submodule to any repo and get a structured, document-centric development process — commands, rules, templates, and governance — in a single versioned package.
+**ADR-driven development workflow for Claude Code and OpenAI Codex.** Add this as a git submodule to any repo and get a structured, document-centric development process — commands, rules, templates, and governance — in a single versioned package.
 
 ---
 
@@ -20,46 +20,65 @@ The goal is not to slow things down. It is to make sure that when Claude impleme
 
 ## Features
 
-- **14 slash commands** — `/adr-init`, `/adr-new-adr`, `/adr-new-plan`, `/adr-continue`, and more
+- **Claude Code** — 14 slash commands (`/adr-init`, `/adr-new-adr`, `/adr-continue`, and more), auto-loaded rules, settings template
+- **OpenAI Codex** — `AGENTS.base.md` with all workflow rules and guidance inline, no commands needed
 - **10 standing rules** — commit approval, ADR workflow, KISS, surgical changes, and more
 - **Templates** — ADR, execution plan, backlog item, parallel work brief, ADR index
 - **Stack detection** — auto-generates Python, TypeScript, and .NET convention rules on init
 - **Git worktree support** — isolated parallel feature development out of the box
-- **npx installer** — `npx @tiagoasta/adrkit init` or `npx @tiagoasta/adrkit update` in any repo
+- **npx installer** — `npx @tiagoasta/adrkit init --claude` or `--codex`
 
 ---
 
 ## Quick Start
 
-### Option A: npx (recommended)
+### Claude Code
 
 ```bash
-# Inside your existing git repo
-npx @tiagoasta/adrkit init
+npx @tiagoasta/adrkit init --claude
 ```
 
-This adds the submodule and prints the one command to run in Claude Code.
+This adds the submodule, then prompts you to run one command inside Claude Code:
 
-To update later:
+```
+@.claude/adr-kit/commands/adr-init.md
+```
+
+That single command bootstraps commands, rules, docs structure, `CLAUDE.md`, and `settings.json`.
+
+### OpenAI Codex
+
+```bash
+npx @tiagoasta/adrkit init --codex
+```
+
+This adds the submodule, creates `AGENTS.md` (auto-loaded by Codex at every session), and scaffolds `docs/`. No further setup needed — the workflow is driven conversationally:
+
+```
+"Create an ADR for [feature description]"
+"Create an execution plan for ADR-[ID]"
+"Resume the current feature"
+```
+
+### Updating
 
 ```bash
 npx @tiagoasta/adrkit update
 ```
 
-### Option B: Manual submodule
+Pulls the latest submodule. For Claude Code, also run `/adr-update` inside Claude Code to refresh command shims and rules.
+
+### Manual submodule
 
 ```bash
-# 1. Add the submodule
 git submodule add https://github.com/tiagoastak/adr-kit.git .claude/adr-kit
 git submodule update --init
-
-# 2. Open Claude Code and run:
-@.claude/adr-kit/commands/adr-init.md
 ```
 
-### After setup
+Then for Claude Code: `@.claude/adr-kit/commands/adr-init.md`
+For Codex: create `AGENTS.md` with `Read '.claude/adr-kit/AGENTS.base.md' for workflow instructions.` as the first line.
 
-`adr-init` handles everything in one step — commands, rules, docs structure, `CLAUDE.md`, and `settings.json`. After it completes:
+### After setup
 
 1. Fill in `CLAUDE.md` — repo name, Quick Commands (run/test/lint), Architecture Overview
 2. Review `.claude/settings.json` — add your stack's tool permissions
